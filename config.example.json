@@ -1,0 +1,61 @@
+{
+  "subscriptionId": "00000000-0000-0000-0000-000000000000",
+  "resourceGroup": "stlc-example",
+  "location": "eastus2",
+  "infrastructure": {
+    "prefix": "stlc-example",
+    "registryName": "replacewithuniqueacrname",
+    "keyVaultName": "replace-with-unique-vault",
+    "foundryResourceGroup": "existing-foundry-rg",
+    "foundryAccountName": "existing-foundry-account",
+    "foundryProjectName": "stlc-example",
+    "foundryLocation": "eastus"
+  },
+  "projectEndpoint": "https://existing-foundry-account.services.ai.azure.com/api/projects/stlc-example",
+  "agentName": "stlc-worker",
+  "workerCpu": "2",
+  "workerMemory": "4Gi",
+  "runtimeSecretName": "stlc-worker-runtime",
+  "webhookSecretName": "stlc-ado-hook",
+  "sessionGeneration": "initial",
+  "commonEnvironment": {
+    "STLC_WORK_TRACKING_PROVIDER": "azure_devops",
+    "STLC_SOURCE_CONTROL_PROVIDER": "azure_devops",
+    "STLC_TEST_MANAGEMENT_PROVIDER": "azure_devops",
+    "STLC_EVENT_PROVIDER": "azure_devops",
+    "STLC_WORK_TRACKING_CONNECTION": "stlc-work",
+    "STLC_SOURCE_CONTROL_CONNECTION": "stlc-source",
+    "STLC_TEST_MANAGEMENT_CONNECTION": "stlc-test",
+    "STLC_EVENT_CONNECTION": "stlc-events",
+    "ADO_ORG_URL": "https://dev.azure.com/example-org",
+    "ADO_PROJECT": "ExampleProject",
+    "ADO_AGENT_STATUS_FIELD": "Custom.AgentState",
+    "STLC_ALLOWED_EVENT_SCOPES": "azure_devops:ExampleProject,azure_devops:replace-with-project-guid",
+    "STLC_ALLOWED_TRIGGER_ACTORS": "azure_devops:qa-lead@example.com",
+    "STLC_ALLOWED_SOURCE_REPOSITORIES": "azure_devops:ExampleProject/automation-tests",
+    "STLC_REQUIRE_DEFECT_APPROVAL": "false",
+    "STLC_RUNTIME_MAX_PENDING_RUNS": "32",
+    "STLC_RUNTIME_MAX_PENDING_PER_WORK_ITEM": "4"
+  },
+  "ingressEnvironment": {
+    "ADO_AGENT_IDENTITY_IDS": "replace-with-bot-identity-id",
+    "ADO_WEBHOOK_MENTION_HANDLE": "STLC Bot",
+    "STLC_SERVICE_BUS_MAX_CONCURRENT_WORK_ITEMS": "4"
+  },
+  "workerEnvironment": {
+    "BASE_PROVIDER": "azure-openai",
+    "BASE_MODEL_NAME": "replace-with-model-deployment",
+    "CODING_PROVIDER": "azure-openai",
+    "CODING_MODEL_NAME": "replace-with-coding-deployment",
+    "SMALL_PROVIDER": "azure-openai",
+    "SMALL_MODEL_NAME": "replace-with-reviewer-deployment",
+    "STLC_ALLOWED_MODEL_PROVIDERS": "azure-openai",
+    "ADO_AUTH_MODE": "entra",
+    "ADO_ENTRA_CREDENTIAL": "managed_identity",
+    "STLC_ALLOWED_ADO_AUTH_MODES": "entra",
+    "STLC_WORKSPACE_BACKEND": "local_fs",
+    "STLC_SANDBOX_NETWORK_ENABLED": "true",
+    "STLC_SANDBOX_COMMAND_TIMEOUT_SECONDS": "900",
+    "STLC_TELEMETRY_ENABLED": "false"
+  }
+}

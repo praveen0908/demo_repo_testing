@@ -1,0 +1,9 @@
+{
+  "name": "stlc-foundry-browser-runtime",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browser runtime matching the current TypeScript automation repository lock",
+  "dependencies": {
+    "@playwright/test": "1.61.1"
+  }
+}
